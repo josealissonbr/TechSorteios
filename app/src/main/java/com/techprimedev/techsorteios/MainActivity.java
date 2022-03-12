@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText lowerValue = findViewById(R.id.intervalo1);
         EditText upperValue = findViewById(R.id.intervalo2);
+        TextView sortedosTxt = findViewById(R.id.sortedosTxt);
         // initialize a Random object somewhere; you should only need one
         Random random = new Random();
         int upperBound = Integer.parseInt(upperValue.getText().toString());
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         // generate a random integer from 0 to 899, then add 100
         int numeroSorteado = lowerBound + (int)(Math.random() * ((upperBound - lowerBound) + 1));
-        Toast.makeText(getApplicationContext(), "Número sorteado: " + String.valueOf(numeroSorteado), Toast.LENGTH_LONG).show();
+
+        sortedosTxt.setText("Número sorteado:" + numeroSorteado);
+        //Toast.makeText(getApplicationContext(), "Número sorteado: " + String.valueOf(numeroSorteado), Toast.LENGTH_LONG).show();
     }
 }
